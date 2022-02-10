@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import RequestWindow from '../RequestWindow/RequestWindow.jsx';
 import './middleContent.scss';
 
 const MiddleContent = () => {

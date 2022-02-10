@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './requestWindow.scss';
+import './requestModal.scss';
 
 
-const RequestWindow = (props) => {
-    const classPrefix = 'modal';
+const RequestModal = (props) => {
+    const classPrefix = 'requestModal';
     const registService = 'https://l94wc2001h.execute-api.ap-southeast-2.amazonaws.com/prod/fake-auth';
 
     const [fullName, setFullName] = useState('');
@@ -36,4 +36,4 @@ const RequestWindow = (props) => {
     );
 }
 
-export default RequestWindow;
+export default RequestModal;
