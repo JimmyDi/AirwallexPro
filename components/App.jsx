@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import MiddleContent from './MiddleContent/MiddleContent.jsx';
 import './app.scss';
+import RequestWindow from './RequestWindow/RequestWindow.jsx';
 
 const App = () => {
     const appContainer = "app-container";
+    const [showRequest, setShowRequest] = useState(true);
 
     return (
         <div className={appContainer}>
@@ -11,6 +13,7 @@ const App = () => {
                 {"BROCCOLI & CO."}
             </div>
             <div className={appContainer + '-middle-content'}><MiddleContent/></div>
+            {showRequest ? <div className={appContainer + '-request-window'}><RequestWindow toggleRequest={setShowRequest}/></div> : null}
             <div className={appContainer + "-bottom-footer"}>
                 <div>
                     {"Made with ♥️ in Melbourne."}
