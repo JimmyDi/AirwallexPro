@@ -13,6 +13,7 @@ const RequestModal = (props) => {
     const [emailValid, setEmailValid] = useState(true);
     const [confirmEmailValid, setConfirmEmailValid] = useState(true);
     const [sending, setSending] = useState(false);
+    const [errorMsg, setErrorMsg] = useState('');
 
     const sendRequest = () => {
         const requestOptions = {
@@ -25,11 +26,16 @@ const RequestModal = (props) => {
         fetch(registService, requestOptions)
             .then(response => {
                 if(response.ok) {
-                    console.log(response);
                     props.toggleSuccess(true);
                     props.toggleRequest(false);
                     return;
                 }
+
+                return response.json();
+            })
+            .then(data => {
+                console.log(data)
+                data && setErrorMsg(data);
             })
             .catch((err) => {
                 // Do sth.
@@ -103,6 +109,9 @@ const RequestModal = (props) => {
                 <button className={classPrefix + "-modal_content-send-button"} onClick={onSendClick} disabled={sending}>
                     {sending ? "Sending, please wait...." : "Send"}
                 </button>
+                <div className={classPrefix + "-modal_content-error-message" + `${errorMsg !== "" ? " show-invalid-error-message" : ""}`}>
+                    {errorMsg?.errorMessage}
+                </div>
             </div>
         </div>
     );
