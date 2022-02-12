@@ -6,7 +6,7 @@ import SuccessModal from './SuccessModal/SuccessModal.jsx'
 
 const App = () => {
     const appContainer = "app-container";
-    const [showRequest, setShowRequest] = useState(true);
+    const [showRequest, setShowRequest] = useState(false);
     const [showSuccess, setShowSuccess] = useState(false);
 
     const toggleRequestModal = (showModal) => {

@@ -11,7 +11,7 @@ const MiddleContent = (props) => {
     return (
         <div className={classPrefix}>
             <div className={classPrefix + '-title'}>
-                {'A better way to enjoy every day'}
+                {'A better way \n to enjoy every day.'}
             </div>
             <div className={classPrefix + '-subTitle'}>
                 {'Be the first to know when we launch'}
