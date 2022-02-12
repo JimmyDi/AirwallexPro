@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './middleContent.scss';
 
-const MiddleContent = () => {
+const MiddleContent = (props) => {
     const classPrefix = 'middle-content';
 
     const onRequestEvent = () => {
-        console.log('Request an invite');
+        props.toggleRequest(true);
     }
 
     return (

@@ -20,9 +20,16 @@ html, body {
   height: 100%;
 
   &-top-head {
-    height: 35px;
+    height: 50px;
     border-color: black;
     text-align: center;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &-content {
+      padding-right: 150px;
+    }
   }
 
   &-middle-content {
@@ -33,13 +40,34 @@ html, body {
     width: 100%;
     overflow: auto;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-request-modal {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-success-modal {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &-bottom-footer {
     height: 20px;
-    background-color: papayawhip;
     text-align: center;
     display: flex;
     flex-direction: column;
+    border-top: 1px solid black;
   }
 }

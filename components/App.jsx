@@ -6,18 +6,21 @@ import SuccessModal from './SuccessModal/SuccessModal.jsx'
 
 const App = () => {
     const appContainer = "app-container";
-    const [showRequest, setShowRequest] = useState(true);
+    const [showRequest, setShowRequest] = useState(false);
     const [showSuccess, setShowSuccess] = useState(true);
+
+    const toggleRequestModal = (showModal) => {
+        setShowRequest(showModal);
+    }
 
     return (
         <div className={appContainer}>
             <div className={appContainer + "-top-head"}>
-                {"BROCCOLI & CO."}
+                <div className={appContainer + "-top-head-content"}>{"BROCCOLI & CO."}</div>
             </div>
-            <div className={appContainer + '-middle-content'}><MiddleContent/></div>
-            {/* {showRequest ? <div className={appContainer + '-request-window'}><RequestModal toggleRequest={setShowRequest}/></div> : null} */}
-            {showSuccess ? <div className={appContainer + '-request-window'}><SuccessModal toggleSuccess={setShowSuccess}/></div> : null}
-
+            <div className={appContainer + '-middle-content'}><MiddleContent toggleRequest={toggleRequestModal}/></div>
+            {showRequest ? <div className={appContainer + '-request-modal'}><RequestModal toggleRequest={setShowRequest} toggleSuccess={setShowSuccess}/></div> : null}
+            {showSuccess ? <div className={appContainer + '-success-modal'}><SuccessModal toggleSuccess={setShowSuccess}/></div> : null}
             <div className={appContainer + "-bottom-footer"}>
                 <div>
                     {"Made with ♥️ in Melbourne."}
