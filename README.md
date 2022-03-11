@@ -1,5 +1,4 @@
-# AirwallexPro
-This is home test project
+# Regist
 1. First thing: do npm install 
 2. If you want to run it from local env, then do: npm run start
 3. If you want to build a bundle, then do: npm run build
